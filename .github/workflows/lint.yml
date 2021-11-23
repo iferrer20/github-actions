@@ -1,0 +1,22 @@
+name: Lint
+
+on: [push]
+jobs:
+  run-linters:
+    name: Run linters
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      # Install your linters here
+      - name: Run linters
+        uses: github/super-linter@v4
+        env:
+          DEFAULT_BRANCH: nodejs_example
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          LINTER_RULES_PATH: /
+          JAVASCRIPT_ES_CONFIG_FILE: .eslintrc.json
+          VALIDATE_JAVASCRIPT_ES: true
+          # Enable your linters here
