@@ -1,0 +1,14 @@
+name: 'Bot telegram'
+description: 'Bot telegram notifier'
+inputs:
+  frase_positiva: 
+    description: 'Frase positiva'
+    required: true
+  frase_negativa:
+    description: 'Frase negativa'
+outputs:
+  exit-status:
+    description: "Exit status"
+runs:
+  using: "node12"
+  main: "dist/index.js"

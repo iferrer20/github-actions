@@ -1,0 +1,41 @@
+name: Jobs
+on: [push]
+jobs:
+
+  test-execution:
+    name: Run tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run jest tests
+        run: npm install && npm run test
+
+
+  update-readme:
+    runs-on: ubuntu-latest
+    needs: test-execution
+    if: ${{ always() }}
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: deps
+        run: sudo apt-get install -y graphicsmagick
+
+      - uses: ./.github/actions/update-readme/
+        with:
+          frase_positiva: 'Los tests han funcionado y lo sabes'
+          frase_negativa: 'Los tests han fallado y lo sabes'
+          resultado_tests: ${{ needs.test-run.result }}
+
+      - name: Commit
+        run: |
+          git config user.email "memebot@github.com"
+          git config user.name "memebot"
+          git add .
+          git commit -m "meme image"
+          git remote set-url origin https://iferrer20:${{ secrets.TOKEN }}@github.com/iferrer20/github-actions.git
+          git push
+

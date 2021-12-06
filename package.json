@@ -1,0 +1,22 @@
+{
+  "name": "github-actions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sum.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iferrer20/github-actions.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iferrer20/github-actions/issues"
+  },
+  "homepage": "https://github.com/iferrer20/github-actions#readme",
+  "dependencies": {
+    "jest": "^27.4.3"
+  }
+}
