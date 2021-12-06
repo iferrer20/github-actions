@@ -26,9 +26,9 @@ jobs:
 
       - uses: ./.github/actions/update-readme/
         with:
-          frase_positiva: 'Los tests han funcionado y lo sabes'
-          frase_negativa: 'Los tests han fallado y lo sabes'
-          resultado_tests: ${{ needs.test-run.result }}
+          frase_positiva: 'Los tests han funcionado'
+          frase_negativa: 'Los tests han fallado'
+          resultado_tests: ${{ needs.test-execution.result }}
 
       - name: Commit
         run: |
