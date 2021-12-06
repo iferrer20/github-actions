@@ -1,0 +1,19 @@
+name: Send telegram
+
+on: [push]
+jobs:
+  run-bot:
+    name: 
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      - name: Telegram bot
+        uses: ./.github/actions/telegram-bot/
+        with:
+          name: ${{ github.event.pusher.name }}
+          token: ${{ secrets.BOT_TOKEN }}
+          chat-id: ${{ secrets.CHAT_ID }}
+          VALIDATE_JAVASCRIPT_ES: true

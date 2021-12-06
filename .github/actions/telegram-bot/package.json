@@ -1,0 +1,23 @@
+{
+  "name": "send-telegram-action-bot",
+  "version": "1.0.0",
+  "description": "Send telegram messages action github",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iferrer20/github-actions.git"
+  },
+  "author": "Ivan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iferrer20/github-actions/issues"
+  },
+  "homepage": "https://github.com/iferrer20/github-actions#readme",
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "node-telegram-bot-api": "^0.54.0"
+  }
+}
